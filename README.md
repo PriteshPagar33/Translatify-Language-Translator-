@@ -22,6 +22,11 @@
   
 - **Backend**:  
   - **Google Translate API / Yandex Translate API / Microsoft Translator API**: These translation APIs are used to provide translations between various languages.
+  - MyMemory Translated API Limits:
+  - Free usage: 5000 words per day
+  - Maximum text length: 500 characters per request
+  - Anonymous usage: 100 requests per day
+  - Response time: ~1-2 seconds
   
 - **State Management**:  
   - **Context API**: For managing and toggling the dark/light theme across the application.
