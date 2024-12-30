@@ -1,8 +1,9 @@
 # 🌎 Translatify 💬🔤 (Language Translator)
 
 **Translatify** is a language translation web application that allows users to translate text from one language to another. It provides an easy-to-use interface for real-time translation across multiple languages, making communication across language barriers easier than ever.Translatify is a free, open-source project aimed at simplifying language translation. Feel free to contribute and enhance its functionality!
+## 🌐Live Demo
 
-
+[<img src="https://img.shields.io/badge/Live%20Demo-Click%20Here-brightgreen?style=for-the-badge&logo=appveyor" alt="Live Demo">](https://translatify-language-translator.vercel.app/)
 ## Features
 - **Text Translation**: Translate text between multiple languages.
 - **Language Selection**: Choose from a wide range of languages to translate to and from.
