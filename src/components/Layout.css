@@ -1,0 +1,166 @@
+:root {
+  --sidebar-width: 250px;
+  --sidebar-collapsed-width: 70px;
+  --transition-speed: 0.3s;
+
+  /* Light Theme */
+  --bg-light: #f8fafc;
+  --sidebar-light: #ffffff;
+  --text-light: #334155;
+  --hover-light: #e2e8f0;
+  --border-light: #e2e8f0;
+  --menu-text-light: #1e293b;
+
+  /* Dark Theme */
+  --bg-dark: #10111d;
+  --sidebar-dark: #0f172a;
+  --text-dark: #f8fafc;
+  --hover-dark: #1e293b;
+  --border-dark: #334155;
+  --menu-text-dark: #f8fafc;
+}
+
+[data-theme="light"] {
+  --bg-color: var(--bg-light);
+  --sidebar-bg: var(--sidebar-light);
+  --text-color: var(--text-light);
+  --hover-bg: var(--hover-light);
+  --border-color: var(--border-light);
+  --menu-text: var(--menu-text-light);
+}
+
+[data-theme="dark"] {
+  --bg-color: var(--bg-dark);
+  --sidebar-bg: var(--sidebar-dark); /* Changed to dark for the dark theme */
+  --text-color: var(--text-dark);
+  --hover-bg: var(--hover-dark);
+  --border-color: var(--border-dark);
+  --menu-text: var(--menu-text-dark);
+}
+
+.layout-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  transition: background-color var(--transition-speed) ease;
+}
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: var(--sidebar-width); /* Set to full width by default */
+  background: var(--sidebar-bg);
+  border-right: 1px solid var(--border-color);
+  transition: width var(--transition-speed) ease-in-out, background-color var(--transition-speed) ease;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.sidebar-header {
+  height: 70px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.logo {
+  min-width: 24px;
+  color: var(--text-color);
+}
+.logo-text {
+  text-decoration: none; /* Remove the underline */
+  color: var(--text-color); /* Ensure the text color remains consistent with the theme */
+}
+
+.logo-text:hover {
+  text-decoration: none; /* Ensure no underline appears on hover */
+}
+
+.logo-text {
+  color: var(--text-color);
+  font-size: 1.2rem;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 1; /* No opacity transition, always visible */
+}
+
+.nav-menu {
+  flex: 1;
+  padding: 1rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 16px;
+  color: var(--menu-text);
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all var(--transition-speed) ease;
+  white-space: nowrap;
+}
+
+.nav-item:hover {
+  background-color: var(--hover-bg);
+  transform: translateX(5px);
+}
+
+.nav-item.active {
+  background-color: var(--hover-bg);
+  font-weight: 500;
+}
+
+.nav-item .icon {
+  min-width: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--menu-text);
+}
+
+.nav-item .label {
+  font-size: 0.95rem;
+  color: var(--menu-text);
+  opacity: 1; /* Always visible, no hover required */
+  pointer-events: auto; /* Enabled by default */
+}
+
+.theme-switcher {
+  padding: 1rem 0.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.theme-button {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 16px;
+  width: 100%;
+  color: var(--menu-text);
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all var(--transition-speed) ease;
+}
+
+.theme-button:hover {
+  background-color: var(--hover-bg);
+  transform: translateX(5px);
+}
+
+.main-content {
+  flex: 1;
+  margin-left: var(--sidebar-width); /* Set to full width by default */
+  transition: margin-left var(--transition-speed) ease;
+  padding: 20px;
+}
